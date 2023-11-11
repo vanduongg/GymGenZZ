@@ -13,7 +13,7 @@ namespace GymGenZ.PViews
 {
     public partial class F_SignCustomer : Form
     {
-        private SQLiteConnection conn = new SQLiteConnection("Data Source=C:\\My_Space\\LearnCode\\Data\\GYM.db");
+        private SQLiteConnection conn = new SQLiteConnection("Data Source=C:\\data\\GYM.db");
         public F_SignCustomer()
         {
             InitializeComponent();
@@ -73,6 +73,11 @@ namespace GymGenZ.PViews
         private bool IsValidCCCD(string cccd)
         {
             return System.Text.RegularExpressions.Regex.IsMatch(cccd, @"^\d{12}$");
+        }
+
+        private void F_SignCustomer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

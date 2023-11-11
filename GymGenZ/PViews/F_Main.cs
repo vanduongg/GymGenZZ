@@ -15,7 +15,7 @@ namespace GymGenZ.PViews
     public partial class F_Main : Form
     {
 
-        SQLiteConnection conn = new SQLiteConnection("Data Source = C:\\My_Space\\LearnCode\\Data\\GYM.db");
+        SQLiteConnection conn = new SQLiteConnection("Data Source = C:\\data\\GYM.db");
         private string receivedValue;
 
         public F_Main(string user)
@@ -279,6 +279,11 @@ namespace GymGenZ.PViews
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void fMain_Paint(object sender, PaintEventArgs e)
         {
 
         }
