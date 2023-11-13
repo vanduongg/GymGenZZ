@@ -52,7 +52,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(331, 754);
             this.panel1.TabIndex = 0;
@@ -62,7 +62,7 @@
             // 
             this.pictureBox1.Image = global::GymGenZ.Properties.Resources.LogoGym;
             this.pictureBox1.Location = new System.Drawing.Point(37, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(232, 151);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,7 +80,7 @@
             this.panel2.Controls.Add(this.btnAddCus);
             this.panel2.Controls.Add(this.btnMain);
             this.panel2.Location = new System.Drawing.Point(0, 95);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(331, 660);
             this.panel2.TabIndex = 1;
@@ -92,7 +92,7 @@
             this.btnSignout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSignout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSignout.Location = new System.Drawing.Point(88, 602);
-            this.btnSignout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignout.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignout.Name = "btnSignout";
             this.btnSignout.Size = new System.Drawing.Size(140, 47);
             this.btnSignout.TabIndex = 7;
@@ -109,7 +109,7 @@
             this.btnPakage.ForeColor = System.Drawing.Color.White;
             this.btnPakage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPakage.Location = new System.Drawing.Point(16, 452);
-            this.btnPakage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPakage.Margin = new System.Windows.Forms.Padding(4);
             this.btnPakage.Name = "btnPakage";
             this.btnPakage.Size = new System.Drawing.Size(317, 57);
             this.btnPakage.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.btnDiscout.ForeColor = System.Drawing.Color.White;
             this.btnDiscout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDiscout.Location = new System.Drawing.Point(16, 388);
-            this.btnDiscout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDiscout.Margin = new System.Windows.Forms.Padding(4);
             this.btnDiscout.Name = "btnDiscout";
             this.btnDiscout.Size = new System.Drawing.Size(317, 57);
             this.btnDiscout.TabIndex = 5;
@@ -147,7 +147,7 @@
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduct.Location = new System.Drawing.Point(16, 260);
-            this.btnProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(317, 57);
             this.btnProduct.TabIndex = 4;
@@ -166,7 +166,7 @@
             this.btnCustomer.ForeColor = System.Drawing.Color.White;
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomer.Location = new System.Drawing.Point(16, 196);
-            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(317, 57);
             this.btnCustomer.TabIndex = 3;
@@ -185,7 +185,7 @@
             this.btnStaff.ForeColor = System.Drawing.Color.White;
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaff.Location = new System.Drawing.Point(16, 324);
-            this.btnStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStaff.Margin = new System.Windows.Forms.Padding(4);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(317, 57);
             this.btnStaff.TabIndex = 2;
@@ -204,7 +204,7 @@
             this.btnAddCus.ForeColor = System.Drawing.Color.White;
             this.btnAddCus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddCus.Location = new System.Drawing.Point(16, 132);
-            this.btnAddCus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCus.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCus.Name = "btnAddCus";
             this.btnAddCus.Size = new System.Drawing.Size(317, 57);
             this.btnAddCus.TabIndex = 1;
@@ -223,7 +223,7 @@
             this.btnMain.ForeColor = System.Drawing.Color.White;
             this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMain.Location = new System.Drawing.Point(16, 68);
-            this.btnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMain.Margin = new System.Windows.Forms.Padding(4);
             this.btnMain.Name = "btnMain";
             this.btnMain.Size = new System.Drawing.Size(317, 57);
             this.btnMain.TabIndex = 0;
@@ -249,7 +249,7 @@
             // fMain
             // 
             this.fMain.Location = new System.Drawing.Point(341, 159);
-            this.fMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fMain.Margin = new System.Windows.Forms.Padding(4);
             this.fMain.Name = "fMain";
             this.fMain.Size = new System.Drawing.Size(991, 581);
             this.fMain.TabIndex = 1;
@@ -265,10 +265,11 @@
             this.Controls.Add(this.lbUser);
             this.Controls.Add(this.fMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_Main";
+            this.Load += new System.EventHandler(this.F_Main_Load_1);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

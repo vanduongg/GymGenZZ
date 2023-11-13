@@ -287,5 +287,10 @@ namespace GymGenZ.PViews
         {
 
         }
+
+        private void F_Main_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
