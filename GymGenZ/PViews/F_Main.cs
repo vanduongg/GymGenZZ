@@ -115,8 +115,10 @@ namespace GymGenZ.PViews
 
             F_SignCustomer f = new F_SignCustomer();
             f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
             fMain.Controls.Add(f);
             f.Show();
+            f.BringToFront();
 
         }
 
@@ -142,6 +144,12 @@ namespace GymGenZ.PViews
 
             btnPakage.BackColor = Color.FromArgb(26, 19, 99);
             btnPakage.ForeColor = Color.White;
+            F_ManagerStaff f = new F_ManagerStaff();
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            fMain.Controls.Add(f);
+            f.Show();
+            f.BringToFront();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -289,6 +297,21 @@ namespace GymGenZ.PViews
         }
 
         private void F_Main_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

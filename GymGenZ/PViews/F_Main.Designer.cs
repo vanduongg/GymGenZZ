@@ -41,9 +41,14 @@
             this.btnMain = new System.Windows.Forms.Button();
             this.lbUser = new System.Windows.Forms.Label();
             this.fMain = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,7 +66,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GymGenZ.Properties.Resources.LogoGym;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(55, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(232, 151);
@@ -239,7 +244,7 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbUser.ForeColor = System.Drawing.Color.Black;
-            this.lbUser.Location = new System.Drawing.Point(335, 57);
+            this.lbUser.Location = new System.Drawing.Point(387, 57);
             this.lbUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(261, 32);
@@ -248,19 +253,54 @@
             // 
             // fMain
             // 
-            this.fMain.Location = new System.Drawing.Point(341, 159);
+            this.fMain.Location = new System.Drawing.Point(341, 160);
             this.fMain.Margin = new System.Windows.Forms.Padding(4);
             this.fMain.Name = "fMain";
             this.fMain.Size = new System.Drawing.Size(991, 581);
             this.fMain.TabIndex = 1;
             this.fMain.Paint += new System.Windows.Forms.PaintEventHandler(this.fMain_Paint);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(19)))), ((int)(((byte)(99)))));
+            this.label1.Location = new System.Drawing.Point(78, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CHECK-IN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GymGenZ.Properties.Resources.checkin;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(73, 73);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(1079, 36);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(228, 83);
+            this.panel3.TabIndex = 3;
+            // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1348, 754);
+            this.ClientSize = new System.Drawing.Size(1452, 754);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbUser);
             this.Controls.Add(this.fMain);
@@ -273,6 +313,9 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +336,8 @@
         private System.Windows.Forms.Button btnSignout;
         private System.Windows.Forms.Panel fMain;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
