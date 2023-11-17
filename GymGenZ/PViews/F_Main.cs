@@ -174,6 +174,12 @@ namespace GymGenZ.PViews
 
             btnPakage.BackColor = Color.FromArgb(26, 19, 99);
             btnPakage.ForeColor = Color.White;
+            F_Customer f = new F_Customer();
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            fMain.Controls.Add(f);
+            f.Show();
+            f.BringToFront();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
