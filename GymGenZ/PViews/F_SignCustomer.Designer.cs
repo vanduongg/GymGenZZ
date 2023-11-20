@@ -40,23 +40,28 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+            this.cbPakage = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(167, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(125, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 476);
+            this.panel1.Size = new System.Drawing.Size(492, 387);
             this.panel1.TabIndex = 0;
             // 
             // btnAdd
@@ -66,10 +71,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(385, 420);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(292, 341);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(263, 53);
+            this.btnAdd.Size = new System.Drawing.Size(197, 43);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Đăng ký";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -79,30 +83,27 @@
             // 
             this.panel4.Controls.Add(this.tbID);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(4, 230);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(3, 187);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(648, 52);
+            this.panel4.Size = new System.Drawing.Size(486, 42);
             this.panel4.TabIndex = 3;
             // 
             // tbID
             // 
             this.tbID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbID.Location = new System.Drawing.Point(149, 11);
-            this.tbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbID.Location = new System.Drawing.Point(112, 9);
             this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(493, 26);
+            this.tbID.Size = new System.Drawing.Size(371, 22);
             this.tbID.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(5, 17);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(4, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 20);
+            this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "CCCD:";
             // 
@@ -110,30 +111,27 @@
             // 
             this.panel3.Controls.Add(this.tbPhone);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(4, 171);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(3, 139);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(648, 52);
+            this.panel3.Size = new System.Drawing.Size(486, 42);
             this.panel3.TabIndex = 2;
             // 
             // tbPhone
             // 
             this.tbPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbPhone.Location = new System.Drawing.Point(149, 11);
-            this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPhone.Location = new System.Drawing.Point(112, 9);
             this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(493, 26);
+            this.tbPhone.Size = new System.Drawing.Size(371, 22);
             this.tbPhone.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(5, 17);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(4, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 20);
+            this.label3.Size = new System.Drawing.Size(102, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Số điện thoại:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -142,30 +140,27 @@
             // 
             this.panel2.Controls.Add(this.tbName);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(4, 112);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(3, 91);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(648, 52);
+            this.panel2.Size = new System.Drawing.Size(486, 42);
             this.panel2.TabIndex = 1;
             // 
             // tbName
             // 
             this.tbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbName.Location = new System.Drawing.Point(149, 11);
-            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbName.Location = new System.Drawing.Point(112, 9);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(493, 26);
+            this.tbName.Size = new System.Drawing.Size(371, 22);
             this.tbName.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(5, 17);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(4, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Họ và tên:";
             // 
@@ -174,23 +169,53 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(175, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(131, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 31);
+            this.label1.Size = new System.Drawing.Size(240, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin khách hàng";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.cbPakage);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(3, 235);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(486, 42);
+            this.panel5.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(4, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Gói tập:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // sqLiteCommand1
+            // 
+            this.sqLiteCommand1.CommandText = null;
+            // 
+            // cbPakage
+            // 
+            this.cbPakage.FormattingEnabled = true;
+            this.cbPakage.Location = new System.Drawing.Point(112, 8);
+            this.cbPakage.Name = "cbPakage";
+            this.cbPakage.Size = new System.Drawing.Size(371, 21);
+            this.cbPakage.TabIndex = 1;
+            // 
             // F_SignCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1017, 596);
+            this.ClientSize = new System.Drawing.Size(763, 484);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "F_SignCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_SignCustomer";
@@ -203,6 +228,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -221,5 +248,9 @@
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label5;
+        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
+        private System.Windows.Forms.ComboBox cbPakage;
     }
 }

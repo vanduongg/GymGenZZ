@@ -55,5 +55,10 @@ namespace GymGenZ.PViews
         {
             MessageBox.Show($"Selected Customer ID: {idCustomer}");
         }
+
+        private void F_Customer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

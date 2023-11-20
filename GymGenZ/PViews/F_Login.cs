@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymGenZ.PControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,45 +14,41 @@ namespace GymGenZ.PViews
 {
     public partial class F_Login : Form
     {
+        private CStaff _staff;
+
         public F_Login()
         {
             InitializeComponent();
-            conn.Open();
-        }
-
-        private void F_Login_Load(object sender, EventArgs e)
-        {
-
+            _staff = new CStaff("Data Source = C:\\Data\\GYM.db");
         }
         SQLiteConnection conn = new SQLiteConnection("Data Source = C:\\data\\GYM.db");
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = ipUsername.Text;
-            string password = ipPassword.Text; 
+            string password = ipPassword.Text;
 
-            using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM Staff WHERE username = @username AND password = @password", conn))
+            bool isAuthenticated = _staff.Login(username, password);
+
+            if (isAuthenticated)
             {
-                da.SelectCommand.Parameters.AddWithValue("@username", username);
-                da.SelectCommand.Parameters.AddWithValue("@password", password);
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                if (dt.Rows.Count > 0)
-                {
-                    this.Hide();
-                    string valueToSend = username;
-                    F_Main f = new F_Main(valueToSend);
-                    f.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ");
-                }
+                this.Hide();
+                string valueToSend = username;
+                F_Main f = new F_Main(valueToSend);
+                f.ShowDialog();
+                this.Close();
             }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ");
+            }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            F_ForgetPassword f = new F_ForgetPassword();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

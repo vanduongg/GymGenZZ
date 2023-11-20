@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GymGenZ.PControls
 {
@@ -17,6 +19,21 @@ namespace GymGenZ.PControls
             _connectionString = connectionString;
         }
 
+        //private void SignPackage(string idCustomer, string caTap, string idPakage)
+        //{
+        //    using (SQLiteConnection con = new SQLiteConnection(_connectionString))
+        //    {
+        //        string updateQuery = "UPDATE Customer SET ";
+        //        using (SQLiteCommand updateCmd = new SQLiteCommand(updateQuery, con))
+        //        {
+        //            updateCmd.Parameters.AddWithValue("@newPassword", newPassword);
+        //            updateCmd.Parameters.AddWithValue("@username", username);
+        //            updateCmd.ExecuteNonQuery();
+        //            return true;
+        //        }
+        //    }
+        //}
+        
         public List<MCustomer> SearchCustomers(string searchText)
         {
             List<MCustomer> customers = new List<MCustomer>();
@@ -33,7 +50,6 @@ namespace GymGenZ.PControls
                                "LEFT JOIN Package ON Schedule.idPackage = Package.id " +
                                "WHERE Customer.name LIKE @searchText OR " +
                                "Customer.phone LIKE @searchText OR Customer.cccd LIKE @searchText";
-
                 using (SQLiteCommand cmd = new SQLiteCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@searchText", $"%{searchText}%");

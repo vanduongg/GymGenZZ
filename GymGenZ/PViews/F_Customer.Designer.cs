@@ -131,6 +131,7 @@
             this.Name = "F_Customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_Customer";
+            this.Load += new System.EventHandler(this.F_Customer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGripViewCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
