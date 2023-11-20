@@ -79,6 +79,24 @@
     <Compile Include="PViews\F_Main.Designer.cs">
       <DependentUpon>F_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PViews\F_ManagerEpisodePac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PViews\F_ManagerEpisodePac.Designer.cs">
+      <DependentUpon>F_ManagerEpisodePac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PViews\F_ManagerProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PViews\F_ManagerProduct.Designer.cs">
+      <DependentUpon>F_ManagerProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PViews\F_ManagerPromotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PViews\F_ManagerPromotion.Designer.cs">
+      <DependentUpon>F_ManagerPromotion.cs</DependentUpon>
+    </Compile>
     <Compile Include="PViews\F_ManagerStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +127,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PViews\F_Main.resx">
       <DependentUpon>F_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PViews\F_ManagerEpisodePac.resx">
+      <DependentUpon>F_ManagerEpisodePac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PViews\F_ManagerProduct.resx">
+      <DependentUpon>F_ManagerProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PViews\F_ManagerPromotion.resx">
+      <DependentUpon>F_ManagerPromotion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PViews\F_ManagerStaff.resx">
       <DependentUpon>F_ManagerStaff.cs</DependentUpon>
