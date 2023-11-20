@@ -23,7 +23,7 @@ namespace GymGenZ.PViews
         {
 
         }
-        SQLiteConnection conn = new SQLiteConnection("Data Source = C:\\Data\\GYM.db");
+        SQLiteConnection conn = new SQLiteConnection("Data Source = C:\\data\\GYM.db");
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
