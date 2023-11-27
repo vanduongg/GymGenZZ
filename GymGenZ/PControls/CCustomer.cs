@@ -2,38 +2,21 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Windows.Forms;
 
 namespace GymGenZ.PControls
 {
     internal class CCustomer
     {
         private string _connectionString;
+        private SQLiteConnection _conn;
 
         public CCustomer(string connectionString)
         {
             _connectionString = connectionString;
+            _conn = new SQLiteConnection(_connectionString);
         }
 
-        //private void SignPackage(string idCustomer, string caTap, string idPakage)
-        //{
-        //    using (SQLiteConnection con = new SQLiteConnection(_connectionString))
-        //    {
-        //        string updateQuery = "UPDATE Customer SET ";
-        //        using (SQLiteCommand updateCmd = new SQLiteCommand(updateQuery, con))
-        //        {
-        //            updateCmd.Parameters.AddWithValue("@newPassword", newPassword);
-        //            updateCmd.Parameters.AddWithValue("@username", username);
-        //            updateCmd.ExecuteNonQuery();
-        //            return true;
-        //        }
-        //    }
-        //}
-        
         public List<MCustomer> SearchCustomers(string searchText)
         {
             List<MCustomer> customers = new List<MCustomer>();
@@ -44,10 +27,8 @@ namespace GymGenZ.PControls
 
                 string query = "SELECT Customer.id AS CustomerID, Customer.name AS CustomerName, " +
                                "Customer.phone AS PhoneNumber, Customer.cccd AS CCCD, " +
-                               "Package.name AS PackageName, Schedule.shift AS Shift " +
+                               "Customer.start AS Start, Customer.end AS End " +
                                "FROM Customer " +
-                               "LEFT JOIN Schedule ON Customer.id = Schedule.idCustomer " +
-                               "LEFT JOIN Package ON Schedule.idPackage = Package.id " +
                                "WHERE Customer.name LIKE @searchText OR " +
                                "Customer.phone LIKE @searchText OR Customer.cccd LIKE @searchText";
                 using (SQLiteCommand cmd = new SQLiteCommand(query, con))
@@ -64,8 +45,8 @@ namespace GymGenZ.PControls
                                 CustomerName = reader["CustomerName"].ToString(),
                                 PhoneNumber = reader["PhoneNumber"].ToString(),
                                 CCCD = reader["CCCD"].ToString(),
-                                PackageName = reader["PackageName"].ToString(),
-                                Shift = reader["Shift"].ToString()
+                                Start = reader["Start"].ToString(),
+                                End = reader["End"].ToString()
                             };
 
                             customers.Add(customer);
@@ -75,6 +56,61 @@ namespace GymGenZ.PControls
             }
 
             return customers;
+        }
+
+        public bool signCustomer(string name, string phone, string cccd, string packageID)
+        {
+            try
+            {
+                _conn.Open();
+
+                string selectPackageQuery = "SELECT * FROM Package WHERE id = @packageID";
+                using (SQLiteCommand selectPackageCmd = new SQLiteCommand(selectPackageQuery, _conn))
+                {
+                    selectPackageCmd.Parameters.AddWithValue("@packageID", packageID);
+
+                    using (SQLiteDataReader packageReader = selectPackageCmd.ExecuteReader())
+                    {
+                        if (packageReader.Read())
+                        {
+                            int packageId = packageReader.GetInt32(packageReader.GetOrdinal("id"));
+                            string packageName = packageReader.GetString(packageReader.GetOrdinal("name"));
+                            int packageTime = packageReader.GetInt32(packageReader.GetOrdinal("time"));
+                            DateTime currentDate = DateTime.Now;
+                            DateTime expirationDate = currentDate.AddDays(packageTime);
+
+                            string insertCustomerQuery = "INSERT INTO Customer (name, phone, cccd, idPackage, start, end) " +
+                                                        "VALUES (@Name, @Phone, @CCCD, @packageID, @registrationDate, @expirationDate)";
+                            using (SQLiteCommand insertCustomerCmd = new SQLiteCommand(insertCustomerQuery, _conn))
+                            {
+                                insertCustomerCmd.Parameters.AddWithValue("@Name", name);
+                                insertCustomerCmd.Parameters.AddWithValue("@Phone", phone);
+                                insertCustomerCmd.Parameters.AddWithValue("@CCCD", cccd);
+                                insertCustomerCmd.Parameters.AddWithValue("@packageID", packageID);
+                                insertCustomerCmd.Parameters.AddWithValue("@registrationDate", currentDate.ToString("yyyy-MM-dd"));
+                                insertCustomerCmd.Parameters.AddWithValue("@expirationDate", expirationDate.ToString("yyyy-MM-dd"));
+
+                                insertCustomerCmd.ExecuteNonQuery();
+                                return true;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin gói tập.");
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                _conn.Close();
+            }
         }
     }
 }

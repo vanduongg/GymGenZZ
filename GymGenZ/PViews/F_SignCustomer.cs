@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GymGenZ.PControls;
+using GymGenZ.PModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,21 +16,44 @@ namespace GymGenZ.PViews
     public partial class F_SignCustomer : Form
     {
         private SQLiteConnection conn = new SQLiteConnection("Data Source=C:\\data\\GYM.db");
+        
         public F_SignCustomer()
         {
             InitializeComponent();
+            getAllPackage();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void getAllPackage()
         {
-
+            try
+            {
+                CPackage packageManager = new CPackage("Data Source=C:\\data\\GYM.db");
+                List<MPackage> packageInfoList = packageManager.getAllPakage();
+                if (packageInfoList.Count > 0)
+                {
+                    cbPakage.DisplayMember = "name";
+                    cbPakage.ValueMember = "id";
+                    cbPakage.DataSource = packageInfoList;
+                }
+                else
+                {
+                    MessageBox.Show("Không có gói tập nào được tìm thấy.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+                CCustomer customerManager = new CCustomer("Data Source=C:\\data\\GYM.db");
             string name = tbName.Text;
             string phone = tbPhone.Text;
             string cccd = tbID.Text;
+            String idPakage = cbPakage.SelectedValue.ToString();
 
             if (!IsValidPhoneNumber(phone))
             {
@@ -42,27 +67,15 @@ namespace GymGenZ.PViews
                 return;
             }
 
-            try
-            {
-                conn.Open();
-                using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Customer (name, phone, cccd) VALUES (@Name, @Phone, @CCCD)", conn))
-                {
-                    cmd.Parameters.AddWithValue("@Name", name);
-                    cmd.Parameters.AddWithValue("@Phone", phone);
-                    cmd.Parameters.AddWithValue("@CCCD", cccd);
+            bool result = customerManager.signCustomer(name, phone, cccd, idPakage);
 
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Đăng ký thành viên thành công!!");
-                }
-            }
-            catch (Exception ex)
+            if (result)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Thêm khách hàng thành công.");
             }
-            finally
+            else
             {
-                conn.Close();
+                MessageBox.Show("Thêm khách hàng thất bại.");
             }
         }
         private bool IsValidPhoneNumber(string phoneNumber)
@@ -76,11 +89,6 @@ namespace GymGenZ.PViews
         }
 
         private void F_SignCustomer_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
         {
 
         }

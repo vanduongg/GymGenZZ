@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cbPakage = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbID = new System.Windows.Forms.TextBox();
@@ -40,15 +43,12 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
-            this.cbPakage = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,6 +63,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 387);
             this.panel1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.cbPakage);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(3, 235);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(486, 42);
+            this.panel5.TabIndex = 5;
+            // 
+            // cbPakage
+            // 
+            this.cbPakage.FormattingEnabled = true;
+            this.cbPakage.Location = new System.Drawing.Point(112, 8);
+            this.cbPakage.Name = "cbPakage";
+            this.cbPakage.Size = new System.Drawing.Size(371, 21);
+            this.cbPakage.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(4, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Gói tập:";
             // 
             // btnAdd
             // 
@@ -134,7 +161,6 @@
             this.label3.Size = new System.Drawing.Size(102, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Số điện thoại:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel2
             // 
@@ -175,37 +201,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin khách hàng";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.cbPakage);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(3, 235);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(486, 42);
-            this.panel5.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(4, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Gói tập:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
             // sqLiteCommand1
             // 
             this.sqLiteCommand1.CommandText = null;
-            // 
-            // cbPakage
-            // 
-            this.cbPakage.FormattingEnabled = true;
-            this.cbPakage.Location = new System.Drawing.Point(112, 8);
-            this.cbPakage.Name = "cbPakage";
-            this.cbPakage.Size = new System.Drawing.Size(371, 21);
-            this.cbPakage.TabIndex = 1;
             // 
             // F_SignCustomer
             // 
@@ -222,14 +220,14 @@
             this.Load += new System.EventHandler(this.F_SignCustomer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

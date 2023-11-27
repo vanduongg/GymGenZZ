@@ -12,7 +12,7 @@ namespace GymGenZ.PModels
         public string CustomerName { get; set; }
         public string PhoneNumber { get; set; }
         public string CCCD { get; set; }
-        public string PackageName { get; set; }
-        public string Shift { get; set; }
+        public string Start { get; set; }
+        public string End { get; set; }
     }
 }

@@ -20,8 +20,8 @@ namespace GymGenZ.PViews
         {
             InitializeComponent();
             _staff = new CStaff("Data Source = C:\\Data\\GYM.db");
+            
         }
-        SQLiteConnection conn = new SQLiteConnection("Data Source = C:\\data\\GYM.db");
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = ipUsername.Text;
@@ -49,6 +49,11 @@ namespace GymGenZ.PViews
             F_ForgetPassword f = new F_ForgetPassword();
             f.ShowDialog();
             this.Close();
+        }
+
+        private void F_Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
