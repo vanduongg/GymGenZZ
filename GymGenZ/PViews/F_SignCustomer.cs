@@ -49,11 +49,13 @@ namespace GymGenZ.PViews
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-                CCustomer customerManager = new CCustomer("Data Source=C:\\data\\GYM.db");
+            CCustomer customerManager = new CCustomer("Data Source=C:\\data\\GYM.db");
             string name = tbName.Text;
             string phone = tbPhone.Text;
             string cccd = tbID.Text;
-            String idPakage = cbPakage.SelectedValue.ToString();
+            string idPakage = cbPakage.SelectedValue.ToString();
+            string gender = cbGender.SelectedItem.ToString();
+            string address = tbAddress.Text;
 
             if (!IsValidPhoneNumber(phone))
             {
@@ -67,7 +69,7 @@ namespace GymGenZ.PViews
                 return;
             }
 
-            bool result = customerManager.signCustomer(name, phone, cccd, idPakage);
+            bool result = customerManager.signCustomer(name, phone, cccd, idPakage, address, gender);
 
             if (result)
             {
@@ -89,6 +91,15 @@ namespace GymGenZ.PViews
         }
 
         private void F_SignCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

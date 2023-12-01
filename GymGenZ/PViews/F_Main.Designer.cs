@@ -58,9 +58,8 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 639);
+            this.panel1.Size = new System.Drawing.Size(248, 723);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -84,7 +83,7 @@
             this.panel2.Controls.Add(this.btnMain);
             this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(248, 561);
+            this.panel2.Size = new System.Drawing.Size(248, 642);
             this.panel2.TabIndex = 1;
             // 
             // btnSignout
@@ -233,7 +232,7 @@
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbUser.ForeColor = System.Drawing.Color.Black;
-            this.lbUser.Location = new System.Drawing.Point(275, 46);
+            this.lbUser.Location = new System.Drawing.Point(254, 46);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(202, 25);
             this.lbUser.TabIndex = 0;
@@ -243,9 +242,8 @@
             // 
             this.fMain.Location = new System.Drawing.Point(256, 101);
             this.fMain.Name = "fMain";
-            this.fMain.Size = new System.Drawing.Size(796, 529);
+            this.fMain.Size = new System.Drawing.Size(1153, 607);
             this.fMain.TabIndex = 1;
-            this.fMain.Paint += new System.Windows.Forms.PaintEventHandler(this.fMain_Paint);
             // 
             // label1
             // 
@@ -259,7 +257,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CHECK-IN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // pictureBox2
             // 
@@ -271,6 +268,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel3
             // 
@@ -287,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1060, 637);
+            this.ClientSize = new System.Drawing.Size(1421, 720);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbUser);

@@ -31,5 +31,10 @@ namespace GymGenZ.PViews
         {
 
         }
+
+        private void F_CustomerSchedule_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

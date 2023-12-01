@@ -358,6 +358,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "F_CustomerSchedule";
             this.Text = "F_CustomerSchedule";
+            this.Load += new System.EventHandler(this.F_CustomerSchedule_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

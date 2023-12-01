@@ -14,49 +14,53 @@ namespace GymGenZ.PViews
 {
     public partial class F_Main : Form
     {
+        private F_Customer f_Customer;
+        private F_CustomerSchedule f_CustomerSchedule;
 
-        SQLiteConnection conn = new SQLiteConnection("Data Source = C:\\data\\GYM.db");
         private string receivedValue;
 
         public F_Main(string user)
         {
             InitializeComponent();
             receivedValue = user;
-            decentralization(user);
-
         }
 
-        private void decentralization(string name)
+        public Panel GetPanel()
         {
-            lbUser.Text = "Xin chào: " + name;
-            using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT roll FROM Staff WHERE username = @name", conn))
-            {
-                da.SelectCommand.Parameters.AddWithValue("@name", name);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                if (dt.Rows.Count > 0)
-                {
-                    string userRole = dt.Rows[0]["roll"].ToString();
-                    if (userRole == "0")
-                    {
-                    }
-                    else if (userRole == "1")
-                    {
-                        btnStaff.Visible = false;
-                        btnPakage.Visible = false;
-                        btnDiscout.Visible = false;
-                    }
-                    else if (userRole == "2")
-                    {
-                    }
-                    else
-                    {
-                        MessageBox.Show("Role not recognized.");
-                    }
-                }
-            }
+            return fMain;
         }
+
+        //private void decentralization(string name)
+        //{
+        //    lbUser.Text = "Xin chào: " + name;
+        //    using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT roll FROM Staff WHERE username = @name", conn))
+        //    {
+        //        da.SelectCommand.Parameters.AddWithValue("@name", name);
+        //        DataTable dt = new DataTable();
+        //        da.Fill(dt);
+
+        //        if (dt.Rows.Count > 0)
+        //        {
+        //            string userRole = dt.Rows[0]["roll"].ToString();
+        //            if (userRole == "0")
+        //            {
+        //            }
+        //            else if (userRole == "1")
+        //            {
+        //                btnStaff.Visible = false;
+        //                btnPakage.Visible = false;
+        //                btnDiscout.Visible = false;
+        //            }
+        //            else if (userRole == "2")
+        //            {
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Role not recognized.");
+        //            }
+        //        }
+        //    }
+        //}
 
         private void F_Main_Load(object sender, EventArgs e)
         {
@@ -292,39 +296,13 @@ namespace GymGenZ.PViews
             this.Close();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void fMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void F_Main_Load_1(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

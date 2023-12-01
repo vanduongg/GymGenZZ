@@ -17,11 +17,10 @@ namespace GymGenZ.PViews
 {
     public partial class F_Customer : Form
     {
-
         private CCustomer _dataService;
         private List<MCustomer> _customers;
         private String idCustomer = null;
-
+ 
         public F_Customer()
         {
             InitializeComponent();
@@ -51,12 +50,55 @@ namespace GymGenZ.PViews
             loadDataToGrid();
         }
 
-        private void btn_Schedule_Click(object sender, EventArgs e)
+        private F_Main FindOpenF_Main()
         {
-            MessageBox.Show($"Selected Customer ID: {idCustomer}");
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is F_Main fMain && !fMain.IsDisposed)
+                {
+                    return fMain;
+                }
+            }
+            return null;
         }
 
+        private void btn_Schedule_Click(object sender, EventArgs e)
+        {
+            F_Main currentFMain = FindOpenF_Main();
+
+            if (currentFMain != null)
+            {
+                Panel fmainPanel = currentFMain.GetPanel();
+
+                if (fmainPanel != null)
+                {
+                    MessageBox.Show(fmainPanel.Name.ToString());
+
+                    F_Schedule f = new F_Schedule();
+                    f.TopLevel = false;
+                    f.Dock = DockStyle.Fill;
+                    fmainPanel.Controls.Add(f);
+                    f.Show();
+                    f.BringToFront();
+                }
+                else
+                {
+                    MessageBox.Show("Panel is null or not initialized in F_Main.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("F_Main is not open or disposed.");
+            }
+        }
+
+
         private void F_Customer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGripViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
