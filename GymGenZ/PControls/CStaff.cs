@@ -212,7 +212,7 @@ namespace GymGenZ.PControls
             {
                 string updateQuery = "UPDATE Staff SET username = @username, " +
                                      "roll = @roll, fullName = @fullName, numberPhone = @numberPhone, " +
-                                     "idCard = @idCard, gender = @gender, birth = @birth, address = @address WHERE ID = @staffID";
+                                     "idCard = @idCard, gender = @gender, birth = @birth, address = @address WHERE ID = @StaffID";
                 using (SQLiteCommand updateCmd = new SQLiteCommand(updateQuery, con))
                 {
                     updateCmd.Parameters.AddWithValue("@username", updatedStaff.username);
@@ -221,7 +221,7 @@ namespace GymGenZ.PControls
                     updateCmd.Parameters.AddWithValue("@fullName", updatedStaff.fullname);
                     updateCmd.Parameters.AddWithValue("@numberPhone", updatedStaff.numberPhone);
                     updateCmd.Parameters.AddWithValue("@idCard", updatedStaff.idCard);
-                    updateCmd.Parameters.AddWithValue("@staffID", updatedStaff.StaffID);
+                    updateCmd.Parameters.AddWithValue("@StaffID", updatedStaff.StaffID);
                     updateCmd.Parameters.AddWithValue("@gender", updatedStaff.gender);
                     updateCmd.Parameters.AddWithValue("@birth", updatedStaff.birth);
                     updateCmd.Parameters.AddWithValue("@address", updatedStaff.address);
@@ -235,7 +235,7 @@ namespace GymGenZ.PControls
         {
             using (SQLiteConnection con = new SQLiteConnection(_conn))
             {
-                string deleteQuery = "DELETE FROM Staff WHERE ID = @staffID";
+                string deleteQuery = "DELETE FROM Staff WHERE ID = @StaffID";
                 using (SQLiteCommand deleteCmd = new SQLiteCommand(deleteQuery, con))
                 {
                     deleteCmd.Parameters.AddWithValue("@staffID", staffID);

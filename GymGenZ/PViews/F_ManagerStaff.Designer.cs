@@ -43,6 +43,7 @@
             this.tbCCCDStaff = new System.Windows.Forms.TextBox();
             this.tbRollStaff = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.cbGDFemaleStaff = new System.Windows.Forms.CheckBox();
             this.cbGDMaleStaff = new System.Windows.Forms.CheckBox();
@@ -69,7 +70,7 @@
             this.btnAddStaff = new System.Windows.Forms.Button();
             this.dtgvStaff = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StaffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,8 +79,8 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -93,7 +94,6 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvStaff)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -275,6 +275,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(444, 416);
             this.panel1.TabIndex = 8;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.tbRollStaff);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Location = new System.Drawing.Point(9, 84);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(428, 28);
+            this.panel8.TabIndex = 12;
             // 
             // panel10
             // 
@@ -554,7 +563,7 @@
             this.dtgvStaff.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.StaffID,
             this.Column2,
             this.Column3,
             this.Column4,
@@ -586,13 +595,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
             // 
-            // Column1
+            // StaffID
             // 
-            this.Column1.DataPropertyName = "StaffID";
-            this.Column1.HeaderText = "Mã nhân viên";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 120;
+            this.StaffID.DataPropertyName = "StaffID";
+            this.StaffID.HeaderText = "Mã nhân viên";
+            this.StaffID.MinimumWidth = 6;
+            this.StaffID.Name = "StaffID";
+            this.StaffID.Width = 120;
             // 
             // Column2
             // 
@@ -608,6 +617,7 @@
             this.Column3.HeaderText = "Vai trò";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.Width = 80;
             // 
             // Column4
             // 
@@ -639,6 +649,7 @@
             this.Column7.HeaderText = "Giới tính";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.Width = 85;
             // 
             // Column8
             // 
@@ -646,7 +657,6 @@
             this.Column8.HeaderText = "Ngày sinh";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
             // 
             // Column9
             // 
@@ -655,15 +665,6 @@
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.Width = 125;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.tbRollStaff);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Location = new System.Drawing.Point(9, 84);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(428, 28);
-            this.panel8.TabIndex = 12;
             // 
             // F_ManagerStaff
             // 
@@ -685,6 +686,8 @@
             this.Load += new System.EventHandler(this.F_ManagerStaff_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -708,8 +711,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvStaff)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,7 +759,8 @@
         private System.Windows.Forms.TextBox tbAddressStaff;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StaffID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
@@ -767,6 +769,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.Panel panel8;
     }
 }
