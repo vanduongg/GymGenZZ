@@ -120,7 +120,8 @@ namespace GymGenZ.PViews
             } 
             else if (_dataStaff.CheckIDCard(newStaff.idCard)){
                 MessageBox.Show("Số CCCD đã tồn tại!!!\nVui lòng nhập lại CCCD khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else if (newStaff.password.Length < 6 || !newStaff.password.Any(char.IsUpper) || !newStaff.password.Any(char.IsDigit))
+            }
+            else if (newStaff.password.Length < 6 || !newStaff.password.Any(char.IsUpper) || !newStaff.password.Any(char.IsDigit))
             {
                 MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự, một ký tự viết hoa và một số.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -141,50 +142,80 @@ namespace GymGenZ.PViews
 
         private void btn_UpdateStaff_Click(object sender, EventArgs e)
         {
-            MStaff updatedStaff = new MStaff
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật nhân viên này không?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result == DialogResult.OK)
             {
-                StaffID = tbIDStaff.Text,
-                username = tbAccStaff.Text,
-                roll = tbRollStaff.Text,
-                fullname = tbFNameStaff.Text,
-                numberPhone = tbSTDStaff.Text,
-                idCard = tbCCCDStaff.Text,
-                gender = cbGDMaleStaff.Checked ? "Nam" : "Nữ",
-                birth = dtpkBirthStaff.Value.ToString("yyyy-MM-dd"),
-                address = tbAddressStaff.Text
-            };
-
-            bool updatedSuccessfully = _dataStaff.UpdateStaff(updatedStaff);
-            if (updatedSuccessfully)
-            {
-                MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadDataToGrid();
-            }
-            else
-            {
-                MessageBox.Show("Không thể cập nhật thông tin nhân viên.\nVui lòng thử lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MStaff updatedStaff = new MStaff
+                {
+                    StaffID = tbIDStaff.Text,
+                    username = tbAccStaff.Text,
+                    roll = tbRollStaff.Text,
+                    fullname = tbFNameStaff.Text,
+                    numberPhone = tbSTDStaff.Text,
+                    idCard = tbCCCDStaff.Text,
+                    gender = cbGDMaleStaff.Checked ? "Nam" : "Nữ",
+                    birth = dtpkBirthStaff.Value.ToString("yyyy-MM-dd"),
+                    address = tbAddressStaff.Text
+                };
+                if (updatedStaff.idCard.Length != 12)
+                {
+                    MessageBox.Show("Số CCCD không hợp lệ.\nVui lòng nhập lại số CCCD!!!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (updatedStaff.numberPhone.Length != 10)
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ.\nVui lòng nhập số lại điện thoại!!!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (_dataStaff.CheckUsername(updatedStaff.username))
+                {
+                    MessageBox.Show("Username đã tồn tại!!!\nVui lòng nhập lại Username khác.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (_dataStaff.CheckPhoneNumber(updatedStaff.numberPhone))
+                {
+                    MessageBox.Show("Số điện thoại đã tồn tại!!!\nVui lòng nhập lại SĐT khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (_dataStaff.CheckIDCard(updatedStaff.idCard))
+                {
+                    MessageBox.Show("Số CCCD đã tồn tại!!!\nVui lòng nhập lại CCCD khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    bool updatedSuccessfully = _dataStaff.UpdateStaff(updatedStaff);
+                    if (updatedSuccessfully)
+                    {
+                        MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadDataToGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể cập nhật thông tin nhân viên.\nVui lòng thử lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 
         private void btnDeleteStaff_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(_idStaff))
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không???", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if(result == DialogResult.OK)
             {
-                bool deletedSuccessfully = _dataStaff.DeleteStaff(_idStaff);
-                if (deletedSuccessfully)
+                if (!string.IsNullOrEmpty(_idStaff))
                 {
-                    MessageBox.Show("Xóa nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadDataToGrid();
-                    ClearFields(); 
+                    bool deletedSuccessfully = _dataStaff.DeleteStaff(_idStaff);
+                    if (deletedSuccessfully)
+                    {
+                        MessageBox.Show("Xóa nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadDataToGrid();
+                        ClearFields();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xóa nhân viên.\nVui lòng thử lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Không thể xóa nhân viên.\nVui lòng thử lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng chọn nhân viên cần xóa từ danh sách!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn nhân viên cần xóa từ danh sách!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void ClearFields()
@@ -196,6 +227,10 @@ namespace GymGenZ.PViews
             tbRollStaff.Text = string.Empty;
             tbCCCDStaff.Text = string.Empty;
             tbPassStaff.Text = string.Empty;
+            tbAddressStaff.Text = string.Empty;
+            cbGDFemaleStaff.Checked = false;
+            cbGDMaleStaff.Checked = false;
+            dtpkBirthStaff.Value = default(DateTime);
         }
 
         private void cbGDMaleStaff_CheckedChanged(object sender, EventArgs e)
